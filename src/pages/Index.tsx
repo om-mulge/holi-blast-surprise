@@ -1,12 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect, useRef } from "react";
+import ColorCursorTrail from "@/components/ColorCursorTrail";
+import FloatingPowder from "@/components/FloatingPowder";
+import HeroSection from "@/components/HeroSection";
+import InteractiveSection from "@/components/InteractiveSection";
+import FunnyMessages from "@/components/FunnyMessages";
+import MemoriesSection from "@/components/MemoriesSection";
+import FinalSection from "@/components/FinalSection";
+import { useScrollConfetti } from "@/components/ColorSplash";
 
 const Index = () => {
+  const lastScroll = useRef(0);
+  const triggerConfetti = useScrollConfetti();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (Math.abs(scrollY - lastScroll.current) > 400) {
+        triggerConfetti();
+        lastScroll.current = scrollY;
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [triggerConfetti]);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative min-h-screen overflow-x-hidden">
+      <FloatingPowder />
+      <ColorCursorTrail />
+      <HeroSection />
+      <InteractiveSection />
+      <FunnyMessages />
+      <MemoriesSection />
+      <FinalSection />
     </div>
   );
 };
