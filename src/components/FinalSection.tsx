@@ -12,7 +12,7 @@ const FinalSection = () => {
       }).catch(() => {});
     } else {
       navigator.clipboard.writeText(window.location.href);
-      alert("Link copied! Now go color someone's day 🎨");
+      alert("Link copied!");
     }
   };
 
@@ -33,8 +33,7 @@ const FinalSection = () => {
             Holi is incomplete without you ❤️
           </p>
           <p className="text-lg font-body text-muted-foreground mb-10">
-            Thanks for being the color in my life 🎨 Now go make someone else's day colorful!
-          </p>
+            Thanks for being the color in my life 🎨 I LOVE YOU BABY </p>
 
           <motion.button
             whileHover={{ scale: 1.1 }}
