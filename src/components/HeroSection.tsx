@@ -57,7 +57,7 @@ const HeroSection = () => {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display leading-tight holi-text-gradient mb-6"
         >
-          HAPPY HOLI YOU CRAZY PEOPLE
+          HAPPY HOLI YOU CRAZY & CUTIESSSS! 🎉
         </motion.h1>
 
         <motion.p

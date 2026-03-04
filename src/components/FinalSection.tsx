@@ -48,7 +48,7 @@ const FinalSection = () => {
       </div>
 
       <div className="mt-16 text-center text-muted-foreground font-body text-sm">
-        Made with 🎨 and too much gulaal
+        Made with 🎨 and too much gulaal by OM MULGE
       </div>
     </section>
   );
