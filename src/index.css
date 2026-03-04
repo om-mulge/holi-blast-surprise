@@ -1,95 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 45 100% 97%;
+    --foreground: 300 50% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 300 50% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 300 50% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 330 90% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 45 100% 55%;
+    --secondary-foreground: 300 50% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 45 50% 90%;
+    --muted-foreground: 300 20% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 15 100% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 330 40% 80%;
+    --input: 330 40% 80%;
+    --ring: 330 90% 55%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* Holi custom colors */
+    --holi-pink: 330 90% 55%;
+    --holi-yellow: 45 100% 55%;
+    --holi-blue: 195 100% 50%;
+    --holi-green: 145 80% 45%;
+    --holi-orange: 25 100% 55%;
+    --holi-purple: 280 80% 55%;
+    --holi-red: 0 85% 55%;
+
+    --font-display: 'Fredoka One', cursive;
+    --font-body: 'Nunito', sans-serif;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -101,5 +66,161 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow-x: hidden;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .holi-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--holi-pink)) 0%,
+      hsl(var(--holi-orange)) 20%,
+      hsl(var(--holi-yellow)) 40%,
+      hsl(var(--holi-green)) 60%,
+      hsl(var(--holi-blue)) 80%,
+      hsl(var(--holi-purple)) 100%
+    );
+  }
+
+  .holi-text-gradient {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--holi-pink)),
+      hsl(var(--holi-yellow)),
+      hsl(var(--holi-blue)),
+      hsl(var(--holi-green)),
+      hsl(var(--holi-orange)),
+      hsl(var(--holi-purple)),
+      hsl(var(--holi-pink))
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s linear infinite;
+  }
+
+  .holi-btn {
+    @apply font-bold rounded-full px-8 py-4 text-lg cursor-pointer transition-all duration-300;
+    font-family: var(--font-display);
+    background: linear-gradient(135deg, hsl(var(--holi-pink)), hsl(var(--holi-orange)));
+    color: hsl(0 0% 100%);
+    box-shadow: 0 4px 20px hsl(var(--holi-pink) / 0.4);
+  }
+
+  .holi-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 30px hsl(var(--holi-pink) / 0.6);
+  }
+
+  .holi-btn-blue {
+    background: linear-gradient(135deg, hsl(var(--holi-blue)), hsl(var(--holi-purple)));
+    box-shadow: 0 4px 20px hsl(var(--holi-blue) / 0.4);
+  }
+
+  .holi-btn-blue:hover {
+    box-shadow: 0 6px 30px hsl(var(--holi-blue) / 0.6);
+  }
+
+  .holi-btn-green {
+    background: linear-gradient(135deg, hsl(var(--holi-green)), hsl(var(--holi-yellow)));
+    box-shadow: 0 4px 20px hsl(var(--holi-green) / 0.4);
+  }
+
+  .holi-btn-green:hover {
+    box-shadow: 0 6px 30px hsl(var(--holi-green) / 0.6);
+  }
+
+  .color-splash {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100;
+    animation: splash-expand 1s ease-out forwards;
+  }
+
+  .particle-dot {
+    position: fixed;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 50;
+    animation: particle-fade 0.8s ease-out forwards;
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes splash-expand {
+  0% {
+    transform: scale(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(8);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-fade {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-15px) rotate(5deg); }
+  66% { transform: translateY(5px) rotate(-3deg); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--holi-yellow) / 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(hsl(var(--holi-pink)), hsl(var(--holi-purple)));
+  border-radius: 999px;
 }
