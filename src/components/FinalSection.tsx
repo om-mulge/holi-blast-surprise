@@ -33,7 +33,7 @@ const FinalSection = () => {
             Holi is incomplete without you ❤️
           </p>
           <p className="text-lg font-body text-muted-foreground mb-10">
-            Thanks for being the color in my life 🎨 I LOVE YOU BABY </p>
+            Thanks for being the color in my life 🎨</p>
 
           <motion.button
             whileHover={{ scale: 1.1 }}
